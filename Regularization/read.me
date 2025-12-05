@@ -1,0 +1,18 @@
+# ANN-Regularization-Demo
+# L1, L2 & Weight Decay in Deep Learning
+
+## Overview
+PyTorch implementation of L1/L2 regularization and weight decay for ANNs. Prevents overfitting by penalizing large weights. 
+
+## Key Techniques
+- **L2 Regularization (Weight Decay)**: Adds \(\lambda \sum w^2\) to loss; shrinks all weights toward zero for smoother models 
+- **L1 Regularization**: Adds \(\lambda \sum |w|\) to loss; creates sparse models by zeroing irrelevant weights
+- **Comparison**: L1 enables feature selection, L2 handles multicollinearity better 
+
+## Features
+- MNIST overfitting demo with/without regularization
+- Loss curves: training vs validation
+- Weight histograms showing sparsity effects
+- Hyperparameter tuning for lambda
+
+## Quick Start
