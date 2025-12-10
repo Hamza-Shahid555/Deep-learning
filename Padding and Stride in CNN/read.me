@@ -1,0 +1,88 @@
+# Padding and Stride in Convolutional Neural Networks (CNN)
+
+This document explains the concepts of **Padding** and **Stride**, two important hyperparameters used in Convolutional Neural Networks (CNNs).
+
+---
+
+## 1. What is Padding?
+
+**Padding** is the process of adding extra pixels (usually zeros) around the border of an input image.
+
+### Why Padding is Used
+- To preserve spatial dimensions of the input.
+- To prevent loss of information at the edges.
+- To allow deeper networks.
+
+### Types of Padding
+- **Valid Padding** → No padding is added.
+- **Same Padding** → Output size is same as input size.
+- **Zero Padding** → Borders filled with zeros.
+
+### Example
+
+Input Size: `5 × 5`  
+Filter Size: `3 × 3`  
+Padding: `1`
+
+Output becomes:  
+
+# Stride in Convolutional Neural Networks (CNN)
+
+This document explains the concept of **Stride** in a simple and easy-to-remember way.
+
+---
+
+## 1. What is Stride?
+
+**Stride** is the number of pixels the filter (kernel) moves each time it slides across the input image.
+
+In simple words:
+> Stride = Step size of the filter movement
+
+---
+
+## 2. Why is Stride Important?
+
+Stride helps to:
+- Control the size of the output feature map
+- Reduce computational cost
+- Perform downsampling in CNNs
+
+---
+
+## 3. How Stride Works
+
+When the filter moves across the image:
+- **Stride = 1** → moves 1 pixel at a time (more detailed scanning)
+- **Stride = 2** → moves 2 pixels at a time (faster, less detailed)
+
+---
+
+## 4. Example
+
+**Input size:** `5 × 5`  
+**Filter size:** `3 × 3`
+
+| Stride | Output Size |
+|--------|------------|
+| 1      | 3 × 3      |
+| 2      | 2 × 2      |
+
+---
+
+## 5. Output Size Formula
+
+\[
+\text{Output Size} = \frac{(N - F)}{S} + 1
+\]
+
+Where:
+- **N** = Input size
+- **F** = Filter size
+- **S** = Stride
+
+---
+
+## 6. Types of Stride
+
+- Horizont
