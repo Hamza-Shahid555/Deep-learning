@@ -1,0 +1,46 @@
+# Pooling Layer in Convolutional Neural Networks (CNN)
+
+This document explains the **Pooling Layer**, its purpose, and how **Max Pooling** works.
+
+---
+
+## 1. What is a Pooling Layer?
+
+A **Pooling Layer** reduces the **spatial size (width and height)** of feature maps while keeping important information.
+
+In simple words:
+> Pooling = Downsampling the feature map
+
+---
+
+## 2. Why Pooling is Used
+
+Pooling layers help to:
+- Reduce computational cost
+- Reduce overfitting
+- Make the model more robust to small shifts (translation invariance)
+- Extract the most important features
+
+---
+
+## 3. Types of Pooling
+
+### a) Max Pooling
+Selects the **maximum value** from a region.
+
+### b) Average Pooling
+Selects the **average value** from a region.
+
+### c) Global Pooling
+Reduces the entire feature map into a **single value per channel**.
+
+---
+
+## 4. What is Max Pooling?
+
+**Max Pooling** takes the **largest value** from each window of the feature map.
+
+### Example
+
+Input Feature Map (4×4):
+
