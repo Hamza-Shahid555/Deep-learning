@@ -1,0 +1,52 @@
+# Comparative Analysis of Deep RNNs for Sentiment Analysis
+
+This project implements and compares three different Recurrent Neural Network (RNN) architectures—**SimpleRNN**, **LSTM**, and **GRU**—to perform binary sentiment classification on the IMDb movie review dataset.
+
+## 📌 Project Overview
+The goal of this notebook is to evaluate the performance and complexity of different sequential models on text data. The models are trained to classify movie reviews as either **Positive** or **Negative**.
+
+### Key Features
+* **Dataset:** IMDb Movie Reviews (50,000 labeled reviews).
+* **Preprocessing:** Tokenization (Top 10k words) and Sequence Padding (fixed length of 100 words).
+* **Architectures:** Implementation of "Stacked" RNNs (multi-layer) using Keras.
+* **Comparison:** Side-by-side code structure for SimpleRNN, LSTM, and GRU.
+
+## 🛠️ Technologies Used
+* **Python 3.x**
+* **TensorFlow / Keras** (Deep Learning Backend)
+* **NumPy** (Data handling)
+
+## 🧠 Model Architectures
+All models follow a similar sequential structure to ensure a fair comparison:
+1.  **Embedding Layer:** Transforms integer-encoded words into dense vectors (Dimension: 32).
+2.  **Layer 1 (Recurrent):** `return_sequences=True` to pass full sequence information to the next layer.
+3.  **Layer 2 (Recurrent):** Processes the sequence and returns the final hidden state.
+4.  **Dense Output:** Sigmoid activation for binary classification (0 or 1).
+
+### Variants Implemented:
+1.  **SimpleRNN:** Basic recurrent loops (prone to vanishing gradients).
+2.  **LSTM (Long Short-Term Memory):** Uses 3 gates (Input, Forget, Output) to handle long-term dependencies.
+3.  **GRU (Gated Recurrent Unit):** Uses 2 gates (Update, Reset); a more efficient variant of LSTM.
+
+## 📊 Results Summary
+*Based on the experimental run in `deep_rnns.ipynb`:*
+
+* **GRU Model Performance:**
+    * **Training Accuracy:** ~95% (Epoch 5)
+    * **Validation Accuracy:** ~81%
+    * **Observation:** The model converges quickly but exhibits signs of **overfitting** (high training accuracy vs. stalling validation accuracy), suggesting the need for regularization techniques like Dropout.
+
+## 🚀 How to Run
+1.  **Open in Google Colab:** Upload `deep_rnns.ipynb` to Google Colab.
+2.  **Install Dependencies:** (Colab comes pre-installed with TensorFlow).
+3.  **Execute Cells:** Run the cells sequentially to load data, build models, and train.
+
+```python
+# Sample usage for GRU model
+model = Sequential([
+    Embedding(10000, 32, input_length=100),
+    GRU(5, return_sequences=True),
+    GRU(5),
+    Dense(1, activation='sigmoid')
+])
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
