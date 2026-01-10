@@ -1,0 +1,139 @@
+
+
+# 📘 Positional Encoding – Complete Guide (Transformer Models)
+
+## 📌 Overview
+
+This project provides a **complete, step-by-step implementation of Positional Encoding** used in **Transformer-based models** such as **BERT, GPT, and Vision Transformers**.
+
+Transformers do not inherently understand the order of tokens in a sequence. **Positional Encoding** solves this problem by injecting **sequence order information** into token embeddings.
+
+This repository includes:
+
+* Conceptual explanation
+* Sinusoidal positional encoding
+* Learned positional encoding
+* Visualization
+* PyTorch implementation
+* Jupyter Notebook (`.ipynb`) for easy understanding
+
+---
+
+## 🧠 Why Positional Encoding?
+
+Unlike RNNs or LSTMs, Transformers process all tokens **in parallel**, so they lose information about word order.
+
+Example:
+
+```
+"Dog bites man"
+"Man bites dog"
+```
+
+Without positional information, both sentences look the same to the model.
+
+➡️ **Positional Encoding adds position awareness to embeddings.**
+
+---
+
+## 🧩 What Is Positional Encoding?
+
+Positional Encoding adds a **position-specific vector** to each token embedding.
+
+**Final Input to Transformer:**
+
+```
+Final Embedding = Word Embedding + Positional Encoding
+```
+
+---
+
+## 🧪 Types of Positional Encoding Implemented
+
+### 1️⃣ Sinusoidal Positional Encoding
+
+* Introduced in the original Transformer paper
+* Uses sine and cosine functions
+* Fixed (not learned)
+* Generalizes well to longer sequences
+
+### 2️⃣ Learned Positional Encoding
+
+* Used in models like BERT and GPT
+* Position embeddings are learned during training
+* Simple and effective
+
+---
+
+## 📂 Project Structure
+
+```
+positional-encoding/
+│
+├── positional_encoding_complete.ipynb   # Complete Jupyter Notebook
+├── README.md                            # Project documentation
+```
+
+---
+
+## ⚙️ Requirements
+
+Install the following libraries if not already installed:
+
+```bash
+pip install numpy matplotlib torch
+```
+
+---
+
+## 🚀 How to Run
+
+1. Open **Jupyter Notebook** or **Google Colab**
+2. Upload `positional_encoding_complete.ipynb`
+3. Run all cells step by step
+
+---
+
+## 📊 Features Included
+
+* NumPy-based positional encoding
+* Heatmap visualization of encoding patterns
+* PyTorch `nn.Module` implementation
+* Batch-wise positional encoding support
+* Practical tensor examples
+
+---
+
+## 📈 Visualization Example
+
+The notebook visualizes positional encodings as a **heatmap**, showing how each position has a unique pattern across embedding dimensions.
+
+---
+
+
+---
+
+## 🎯 Use Cases
+
+* NLP (BERT, GPT, Transformers)
+* Vision Transformers (ViT)
+* Speech models
+* Research & academic assignments
+* Machine Learning portfolios
+
+---
+
+## 📚 References
+
+* Vaswani et al., *Attention Is All You Need* (2017)
+* PyTorch Documentation
+* Transformer Architecture Research Papers
+
+---
+
+## 👨‍💻 Author
+
+**Hamza Shahid**
+Data Science | Machine Learning | Deep Learning
+
+
