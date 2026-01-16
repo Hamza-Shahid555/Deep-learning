@@ -1,0 +1,46 @@
+# Custom Models and Training with TensorFlow 🧠
+
+This repository contains a comprehensive Jupyter Notebook exploring advanced TensorFlow mechanics and the customization of the Keras API. It serves as a practical guide and solution set for Chapter 12 of *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow*.
+
+The focus is on breaking out of the standard Keras API to build custom components, essential for developing novel AI architectures and Autonomous Agents.
+
+## 📂 Content Overview
+
+The notebook `12_custom_models_and_training_with_tensorflow.ipynb` covers the following core topics:
+
+### 1. Low-Level TensorFlow API
+- **Tensors & Operations:** Manipulating tensors similarly to NumPy arrays.
+- **Data Structures:** Working with Strings, Ragged Tensors, Sparse Tensors, Sets, and Queues.
+- **Variables:** Managing state with `tf.Variable`.
+
+### 2. Custom Keras Components
+- **Custom Loss Functions:** Implementation of the **Huber Loss** function (with and without threshold hyperparameters).
+- **Custom Metrics:** Creating streaming metrics (stateful) for precise evaluation.
+- **Custom Layers:**
+  - Building layers with learnable weights (`add_weight`).
+  - Handling multiple inputs/outputs.
+  - Differentiating behavior between training and inference (e.g., `MyGaussianNoise`).
+- **Custom Models:** Implementing complex architectures like **Residual Blocks** and **ResNet** components using the Subclassing API.
+
+### 3. Advanced Training Mechanics
+- **Automatic Differentiation:** Utilizing `tf.GradientTape` to compute gradients manually.
+- **Custom Training Loops:** Writing raw training loops from scratch (bypassing `model.fit()`) using optimizers and gradients.
+- **TensorFlow Functions:** Optimizing Python functions into efficient computation graphs using `@tf.function` and AutoGraph.
+
+## 🛠️ Key Exercises & Solutions
+
+This notebook includes solutions to complex implementation exercises:
+
+* **Custom Layer Normalization:** A manual implementation of Layer Normalization matching the behavior of `tf.keras.layers.LayerNormalization`.
+* **Fashion MNIST Custom Loop:** A full training loop implementation for the Fashion MNIST dataset, including:
+    * Dynamic progress bars.
+    * Step-by-step gradient descent.
+    * Dual optimizers (different learning rates for upper vs. lower layers).
+
+## 🚀 Getting Started
+
+### Prerequisites
+Ensure you have the following installed (Python 3.7+):
+
+```bash
+pip install tensorflow numpy matplotlib scikit-learn tqdm
